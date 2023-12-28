@@ -1,0 +1,34 @@
+.container {
+  padding: 20px 100px 50px 100px;
+  color: white;
+}
+.container .converter {
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  border: 1px solid #FEC903;
+  border-radius: 20px;
+  padding: 30px;
+  width: -moz-max-content;
+  width: max-content;
+}
+.container .converter .converter__item {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.container .converter .converter__item select {
+  padding: 15px;
+  border-radius: 10px;
+}
+.container .converter .converter__item input {
+  padding: 15px;
+  border-radius: 10px;
+}
+.container .converter .converter__item input:hover {
+  box-shadow: inset 2px 2px 15px 5px rgba(0, 0, 0, 0.5);
+}
+.container .converter .converter__item p {
+  margin: 0;
+  font-weight: 600;
+}/*# sourceMappingURL=converter.component.css.map */

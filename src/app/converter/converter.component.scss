@@ -1,0 +1,32 @@
+.container{
+    padding: 20px 100px 50px 100px;
+    color: white;
+    .converter{
+        display: flex;
+        column-gap: 20px;
+        border: 1px solid #FEC903;
+        border-radius: 20px;
+        padding: 30px;
+        width: max-content;
+        .converter__item{
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            select{
+                padding: 15px;
+                border-radius: 10px;
+            }
+            input{
+                padding: 15px;
+                border-radius: 10px;
+                &:hover{
+                    box-shadow: inset 2px 2px 15px 5px rgba(0, 0, 0, 0.5);
+                }
+            }
+            p{
+                margin: 0;
+                font-weight: 600;
+            }
+        }
+    }
+}

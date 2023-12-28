@@ -1,13 +1,24 @@
 header{
-    width: max-content;
-    .content{
-        p{
+    padding: 20px 100px 0 100px;
+    color: #FEC903;
+    h1{
+        font-size: 50px;
+    }
+    .exchange-rate{
+        display: flex;
+        .exchange-rate__item{
+            min-width: 200px;
             display: flex;
             align-items: center;
-            margin: 10px 0;
-            padding: 20px 10px;
-            background-color: bisque;
-            border-radius: 20px;
+            margin-right: 20px;
+            padding: 20px 20px;            
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            font-size: 16px;
+            background: transparent;
+            color: #fff;
+            border: 1px solid #FEC903;
             img{
                 margin-right: 10px;
             }

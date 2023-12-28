@@ -1,15 +1,25 @@
 header {
-  width: -moz-max-content;
-  width: max-content;
+  padding: 20px 100px 0 100px;
+  color: #FEC903;
 }
-header .content p {
+header h1 {
+  font-size: 50px;
+}
+header .exchange-rate {
+  display: flex;
+}
+header .exchange-rate .exchange-rate__item {
+  min-width: 200px;
   display: flex;
   align-items: center;
-  margin: 10px 0;
-  padding: 20px 10px;
-  background-color: bisque;
-  border-radius: 20px;
+  margin-right: 20px;
+  padding: 20px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #FEC903;
 }
-header .content p img {
+header .exchange-rate .exchange-rate__item img {
   margin-right: 10px;
 }/*# sourceMappingURL=app.component.css.map */

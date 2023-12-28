@@ -1,18 +1,24 @@
-<h2>Конвертер валют</h2>
+<div class="container">
+    <h2>Конвертер валют</h2>
 
-<input [value]="secondCurrency / currentRate" type="number" [(ngModel)]="firstCurrency">
-<select name="firstCurrency" #selectFirstCurrency (change)="firstCurrentCurrency(selectFirstCurrency.value)">    
-    <option>Українська гривня</option>
-    <option *ngFor="let element of this.data">{{element.txt}}</option>
-</select>
-<br>
-<p>Курс: <span>{{firstRate/secondRate}}</span></p>
-<br>
-<br>
-<input [value]="firstCurrency * currentRate" type="number" [(ngModel)]="secondCurrency">
-<select name="secondCurrency" #selectSecondCurrency (change)="secondCurrentCurrency(selectSecondCurrency.value)">
-    <option>Українська гривня</option>
-    <option *ngFor="let element of this.data">{{element.txt}}</option>
-</select>
-<br>
-<p>Курс: <span>{{secondRate/firstRate}}</span></p>
+    <div class="converter">
+        <div class="converter__item">
+            <select name="firstCurrency" #selectFirstCurrency (change)="firstCurrentCurrency(selectFirstCurrency.value)">    
+                <option>Українська гривня</option>
+                <option *ngFor="let element of this.data">{{element.txt}}</option>
+            </select>
+            <input [value]="secondCurrency / currentRate" type="number" [(ngModel)]="firstCurrency">
+            <p>Курс: <span>{{firstRate/secondRate | number: '1.0-4' }}</span></p>   
+        </div>
+        <br>
+        <br>
+        <div class="converter__item">
+            <select name="secondCurrency" #selectSecondCurrency (change)="secondCurrentCurrency(selectSecondCurrency.value)">
+                <option>Українська гривня</option>
+                <option *ngFor="let element of this.data">{{element.txt}}</option>
+            </select>
+            <input [value]="firstCurrency * currentRate" type="number" [(ngModel)]="secondCurrency">
+            <p>Курс: <span>{{secondRate/firstRate | number: '1.0-4' }}</span></p>
+        </div>
+    </div>
+</div>
