@@ -16,11 +16,11 @@ interface CurrencyObj {
 
 export class ConverterComponent implements OnInit {
   
-  firstCurrency:number=0;
-  secondCurrency:number=0
+  firstCurrency!:number;
+  secondCurrency!:number;
   firstRate:number=1;
   secondRate:number=1;
-  currentRate:number=0;
+  currentRate:number=1;
 
   @Input() data:any
 
@@ -28,16 +28,11 @@ export class ConverterComponent implements OnInit {
     let elem:CurrencyObj = this.data.find((item:CurrencyObj) => item.txt === value);
     
     if (elem == undefined) {
-      elem = {
-        cc:'UAH',
-        exchangedate:'',
-        r030: 1,
-        rate: 1,
-        txt:'Українська гривня'
-      }
+      this.firstRate = 1;
+    } else {
+      this.firstRate = elem.rate;
     }
-
-    this.firstRate = elem.rate;
+    
     this.currentRate=this.firstRate/this.secondRate;
   }
 
@@ -45,25 +40,12 @@ export class ConverterComponent implements OnInit {
     let elem:CurrencyObj = this.data.find((item:CurrencyObj) => item.txt === value);
 
     if (elem == undefined) {
-      elem = {
-        cc:'UAH',
-        exchangedate:'',
-        r030: 1,
-        rate: 1,
-        txt:'Українська гривня'
-      }
+      this.secondRate = 1;
+    } else {
+      this.secondRate = elem.rate;
     }
-
-    this.secondRate = elem.rate;
+    
     this.currentRate=this.firstRate/this.secondRate;
-  }
-
-  firstValue(){
-    this.secondCurrency=this.firstCurrency * this.currentRate;
-  }
-
-  secondValue(){
-    this.firstCurrency=this.secondCurrency / this.currentRate;
   }
 
   ngOnInit(): void {
