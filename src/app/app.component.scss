@@ -1,0 +1,17 @@
+header{
+    width: max-content;
+    .content{
+        p{
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 20px 10px;
+            background-color: bisque;
+            border-radius: 20px;
+            img{
+                margin-right: 10px;
+            }
+        }
+    }
+    
+}

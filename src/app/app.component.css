@@ -1,0 +1,15 @@
+header {
+  width: -moz-max-content;
+  width: max-content;
+}
+header .content p {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 20px 10px;
+  background-color: bisque;
+  border-radius: 20px;
+}
+header .content p img {
+  margin-right: 10px;
+}/*# sourceMappingURL=app.component.css.map */
