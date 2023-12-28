@@ -35,6 +35,10 @@
 
 @media (max-width: 840px) {
   .container {
-    padding: 20px 50px 50px 50px;
+    padding: 20px 10px 50px 10px;
+  }
+  .container .converter {
+    padding: 15px;
+    row-gap: 10px;
   }
 }/*# sourceMappingURL=converter.component.css.map */
