@@ -31,4 +31,10 @@
 .container .converter .converter__item p {
   margin: 0;
   font-weight: 600;
+}
+
+@media (max-width: 840px) {
+  .container {
+    padding: 20px 50px 50px 50px;
+  }
 }/*# sourceMappingURL=converter.component.css.map */
