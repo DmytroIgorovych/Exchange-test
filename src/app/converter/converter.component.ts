@@ -22,11 +22,10 @@ export class ConverterComponent implements OnInit {
   secondRate:number=1;
   currentRate:number=1;
 
-  @Input() data:any
+  @Input() data!:CurrencyObj[];
 
   firstCurrentCurrency(value:string){
-    console.log(this.data);
-    let elem:CurrencyObj = this.data.find((item:CurrencyObj) => item.txt === value);
+    let elem:CurrencyObj | undefined = this.data.find((item:CurrencyObj) => item.txt === value);
     
     if (elem == undefined) {
       this.firstRate = 1;
@@ -38,7 +37,7 @@ export class ConverterComponent implements OnInit {
   }
 
   secondCurrentCurrency(value:string){
-    let elem:CurrencyObj = this.data.find((item:CurrencyObj) => item.txt === value);
+    let elem:CurrencyObj | undefined = this.data.find((item:CurrencyObj) => item.txt === value);
 
     if (elem == undefined) {
       this.secondRate = 1;
@@ -49,6 +48,6 @@ export class ConverterComponent implements OnInit {
     this.currentRate=this.firstRate/this.secondRate;
   }
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
   }
 }

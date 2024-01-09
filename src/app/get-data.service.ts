@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { CurrencyObj } from './app.component';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,10 +9,10 @@ import { HttpClient } from '@angular/common/http';
 export class GetDataService {
 
   constructor(private http: HttpClient) { }
+  responseType?: 'arraybuffer'
 
-  getDataMethod(){
-    // Запит на віддалений сервер та автоматично розпарив з json
-    // формату у звичайний javascript масив з об'єктами
-    return this.http.get('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json')
+  getDataMethod(): Observable<CurrencyObj[]>{
+
+    return this.http.get<CurrencyObj[]>('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json')
   }
 }

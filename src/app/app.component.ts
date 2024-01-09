@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetDataService } from './get-data.service';
 
-interface CurrencyObj {
+export interface CurrencyObj {
   cc:string,
   exchangedate:string,
   r030:number,
@@ -19,15 +19,16 @@ export class AppComponent implements OnInit {
   title = 'Exchange';
 
   constructor(private getDataService: GetDataService) { }
-  dataArray:any;
-  currentDate:number=0;
+  dataArray!:CurrencyObj[];
+  
+  currentDate:string='';
   USDText:string='';
   EURText:string='';
-  USDRate:string='';
-  EURRate:string='';
+  USDRate:number=0;
+  EURRate:number=0;
 
   ngOnInit(): void {
-    this.getDataService.getDataMethod().subscribe(res => {
+    this.getDataService.getDataMethod().subscribe(res => {      
       this.dataArray = res;
       this.currentDate= this.dataArray[0].exchangedate;
       this.USDText=this.dataArray[24].txt;
